@@ -8,4 +8,5 @@ COPY server.xml /usr/local/tomcat/conf/server.xml
 RUN cd /usr/local/tomcat/webapps/ \ 
 && curl -LO https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
 
-EXPOSE 8009
+EXPOSE 8009 8000
+ENTRYPOINT ["catalina.sh", "run"]

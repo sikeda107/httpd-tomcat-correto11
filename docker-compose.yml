@@ -8,5 +8,11 @@ services:
   tomcat:
     container_name: tomcatcorreto11
     build: ./tomcat
+    entrypoint: ["catalina.sh", "jpda", "run"]
+    environment:
+      - JPDA_ADDRESS=0.0.0.0:8000
+      - JPDA_TRANSPORT=dt_socket
+    ports:
+      - "8000:8000"
 volumes:
   data: {}
